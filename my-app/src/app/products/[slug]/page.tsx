@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 
 
 type Props = {
@@ -8,6 +9,9 @@ type Props = {
 
 
 export default function PantsPage({params} : Props) {
+    if(params.slug === 'nothing') {
+        notFound();
+    }
     return <h1>{params.slug} 페이지</h1>
 }
 
