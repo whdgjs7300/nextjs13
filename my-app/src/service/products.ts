@@ -10,7 +10,7 @@ export type Product = {
 }
 
 export async function getProducts() : Promise<Product[]> {
-    // data 경로의 json 파일 불러오기
+    // data 경로의 json 파일 비동기 불러오기
     const filePath = path.join(process.cwd(), 'data', 'products.json');
     const data = await fs.readFile(filePath, 'utf-8');
 
